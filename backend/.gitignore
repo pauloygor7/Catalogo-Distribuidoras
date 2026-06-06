@@ -1,0 +1,20 @@
+# Ambiente
+.env
+.env.*
+
+# Chave do Firebase
+firebase-service-account.json
+
+# Dependências
+node_modules/
+
+# Build
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
