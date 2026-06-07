@@ -7,4 +7,5 @@ export interface Product {
     estoque: number;
     imagemUrl?: string;
     createdAt?: Date;
+    updatedAt?: Date;
 }
