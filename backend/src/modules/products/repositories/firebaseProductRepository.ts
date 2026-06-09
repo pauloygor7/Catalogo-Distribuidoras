@@ -23,33 +23,33 @@ export class FirebaseProductRepository implements IProductRepository {
     return { id: doc.id, ...doc.data() } as Product;
   }
 
-async update(id: string, data: UpdateProductDTO): Promise<Product> {
-  const docRef = this.col.doc(id);
+  async update(id: string, data: UpdateProductDTO): Promise<Product> {
+    const docRef = this.col.doc(id);
 
-  const doc = await docRef.get();
+    const doc = await docRef.get();
 
-  if (!doc.exists) {
-    throw new Error('Produto não encontrado');
+    if (!doc.exists) {
+      throw new Error('Produto não encontrado');
+    }
+
+    const currentProduct = {
+      id: doc.id,
+      ...doc.data()
+    } as Product;
+
+    const updatedProduct: Product = {
+      ...currentProduct,
+      ...data,
+      updatedAt: new Date()
+    };
+
+    await docRef.update({
+      ...data,
+      updatedAt: updatedProduct.updatedAt
+    });
+
+    return updatedProduct;
   }
-
-  const currentProduct = {
-    id: doc.id,
-    ...doc.data()
-  } as Product;
-
-  const updatedProduct: Product = {
-    ...currentProduct,
-    ...data,
-    updatedAt: new Date()
-  };
-
-  await docRef.update({
-    ...data,
-    updatedAt: updatedProduct.updatedAt
-  });
-
-  return updatedProduct;
-}
 
   async delete(id: string): Promise<void> {
     await this.col.doc(id).delete();
