@@ -32,9 +32,4 @@ export class FirebaseInventoryRepository implements IInventoryRepository {
         const snap = await this.col.orderBy('createdAt', 'desc').get();
         return snap.docs.map(d => ({ id: d.id, ...d.data() } as InventoryMoviment));
     }
-
-    async listMovementsByProduct(produtoId: string): Promise<InventoryMoviment[]> {
-        const snap = await this.col.where('produtoId', '==', produtoId).orderBy('createdAt', 'desc').get();
-        return snap.docs.map(d => ({ id: d.id, ...d.data() } as InventoryMoviment));
-    }
 }
