@@ -4,6 +4,7 @@ import { productRoutes } from '@modules/products/routes/product.routes';
 import { categoryRoutes } from '@modules/categories/routes/category.routes';
 import { inventoryRoutes } from '@modules/inventory/routes/inventory.routes';
 import { uploadRoutes } from '@modules/uploads/routes/upload.routes';
+import { reportsRoutes } from '@modules/reports/routes/reports.routes';
 
 const routes = Router();
 
@@ -12,5 +13,6 @@ routes.use('/produto', productRoutes);
 routes.use('/categoria', categoryRoutes);
 routes.use('/estoque', inventoryRoutes);
 routes.use('/upload',     uploadRoutes);
+routes.use('/reporte',    reportsRoutes);
 
 export { routes };
