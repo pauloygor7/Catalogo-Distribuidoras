@@ -8,10 +8,10 @@ import {
     Users,
     LogOut,
 } from 'lucide-react'
-import { useAuth } from '../../hooks/useAuth'
-import { usePermission } from '../../hooks/usePermission'
-import { ROUTES } from '../../constants/routes'
-import { cn } from '../../utils/cn'
+import { useAuth } from '@/hooks/useAuth'
+import { usePermission } from '@/hooks/usePermission'
+import { ROUTES } from '@/constants/routes'
+import { cn } from '@/utils/cn'
 
 const navItems = [
     { label: 'Dashboard', icon: LayoutDashboard, to: ROUTES.DASHBOARD },
