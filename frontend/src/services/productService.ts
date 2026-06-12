@@ -1,5 +1,5 @@
 import { api } from './api'
-import { Product, CreateProductDTO, UpdateProductDTO } from '@types/product.types'
+import { Product, CreateProductDTO, UpdateProductDTO } from '@/types/product.types'
 
 interface PaginatedResponse<T> {
   data: T[]

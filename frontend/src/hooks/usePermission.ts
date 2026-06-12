@@ -1,6 +1,6 @@
 import { useAuth } from './useAuth'
 import { PERMISSIONS } from '@/constants/roles'
-import { UserRole } from '@types/user.types'
+import { UserRole } from '@/types/user.types'
 
 type Resource = keyof typeof PERMISSIONS
 type Action<R extends Resource> = keyof (typeof PERMISSIONS)[R]

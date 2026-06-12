@@ -15,6 +15,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": [
+      "vite/client"
+    ],
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -45,6 +48,9 @@
       "@utils/*": [
         "./src/utils/*"
       ],
+      "@components/*": [
+        "./src/components/*"
+      ],
       "@assets/*": [
         "./src/assets/*"
       ]
@@ -53,9 +59,4 @@
   "include": [
     "src"
   ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
 }

@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { productService } from '@services/productService'
 import { QUERY_KEYS } from '@/constants/queryKeys'
-import { CreateProductDTO, UpdateProductDTO } from '@types/product.types'
+import { CreateProductDTO, UpdateProductDTO } from '@/types/product.types'
 
 interface UseProductsParams {
   search?: string
